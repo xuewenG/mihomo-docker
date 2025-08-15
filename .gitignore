@@ -1,0 +1,5 @@
+dist/
+*.log
+mihomo.yaml
+mihomo-base.yaml
+mihomo-updater.yaml

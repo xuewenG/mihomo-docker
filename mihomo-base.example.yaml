@@ -1,0 +1,39 @@
+port: 10808
+socks-port: 10809
+mixed-port: 10802
+redir-port: 10803
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: false
+external-controller: 0.0.0.0:10805
+secret: example-password
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:10807
+  enhanced-mode: redir-host
+  use-hosts: true
+  nameserver:
+    - https://223.5.5.5/dns-query
+    - https://120.53.53.53/dns-query
+  fallback:
+    - https://8.8.8.8/dns-query
+    - https://1.0.0.1/dns-query
+    - https://9.9.9.9/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+    domain:
+      - +.google.com
+      - +.googleapis.com
+      - +.youtube.com
+      - +.github.com
+      - +.githubassets.com
+      - +.githubusercontent.com
+      - +.twitter.com
+      - +.facebook.com
+      - +.docker.com
+      - +.docker.io

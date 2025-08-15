@@ -1,0 +1,10 @@
+log_file: ./mihomo-updater.log
+mihomo_api_url: http://127.0.0.1:10805
+mihomo_api_token: example-password
+subscribe_url: https://example.com/subscribe?token=example-token
+base_config_path: ./mihomo-base.yaml
+update_interval: 1h
+update_fields:
+  - proxies
+  - proxy-groups
+  - rules
