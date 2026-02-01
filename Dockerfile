@@ -1,4 +1,4 @@
-FROM golang:1.23.8-alpine AS builder
+FROM golang:1.23.11-alpine AS builder
 ARG VERSION
 ARG COMMIT_ID
 WORKDIR /app
@@ -9,7 +9,7 @@ RUN go mod download
 COPY . .
 RUN make build VERSION=${VERSION} COMMIT_ID=${COMMIT_ID}
 
-FROM metacubex/mihomo:v1.19.12
+FROM metacubex/mihomo:v1.19.19
 WORKDIR /app
 RUN apk update --no-cache && apk add --no-cache ca-certificates tzdata
 COPY --from=builder /app/dist/mihomo-updater /mihomo-updater
