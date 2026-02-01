@@ -230,7 +230,7 @@ func (u *Updater) StartScheduler() error {
 	log.Printf("Mihomo 配置更新器已启动，每 %s 更新一次...", config.Config.UpdateInterval)
 
 	if err := u.updateConfig(); err != nil {
-		return fmt.Errorf("初始更新 Mihomo 配置失败: %v", err)
+		fmt.Errorf("初始更新 Mihomo 配置失败: %v", err)
 	}
 
 	for range ticker.C {
